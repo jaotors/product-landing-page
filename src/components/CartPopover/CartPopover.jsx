@@ -4,6 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/solid'
 
 import { CartContext } from '../../context/CartContext'
+import CartList from '../CartList/CartList'
 
 const CartPopover = ({ primary = false, direction = 'bottom' }) => {
   const { cart } = useContext(CartContext)
@@ -45,27 +46,13 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
             )}
           >
             <div className='overflow-hidden bg-white rounded shadow ring-1 ring-black/5 max-h-[320px]'>
-              {cart.length > 1 ? (
+              {cart.length < 1 ? (
                 <p className='text-lg text-center font-medium p-2'>
                   No items yet!
                 </p>
               ) : (
                 <>
-                  <ul className='w-full max-h-[16rem] overflow-y-scroll scroll overflow-hidden border-b-2'>
-                    <li className='flex items-center justify-between w-full p-2 border-b-[1px] border-b-gray-800'>
-                      <div className='flex items-center '>
-                        <div className='flex items-center justify-center w-16 h-16 border border-black'>
-                          img
-                        </div>
-                        <p className='font-medium text-md ml-2'>
-                          30L: Midnight Everyday Bag
-                        </p>
-                      </div>
-                      <button>
-                        <XMarkIcon className='w-4 h-4' />
-                      </button>
-                    </li>
-                  </ul>
+                  <CartList items={cart} />
                   <div className='flex items-center justify-between w-full p-4'>
                     <p className='text-md font-black'>Total: $00.00</p>
                     <button className='border border-gray-800 rounded px-6 py-2'>
