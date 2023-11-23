@@ -24,4 +24,4 @@ $ yarn
 
 $ yarn dev
 ```
-Open localhost:5173 to view the app.
+Open [localhost:5173](http://localhost:5173/) to view the app.
