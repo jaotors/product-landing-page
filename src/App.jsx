@@ -1,14 +1,13 @@
 import CartContextProvider from './context/CartContext'
 import Navbar from './components/Navbar'
+import { Home } from './pages'
 
 function App() {
   return (
     <CartContextProvider>
       <div className='flex flex-1 flex-col min-h-screen'>
         <Navbar />
-        <h1 className='text-3xl font-black'>
-          Hello World, Vite + React + Tailwind
-        </h1>
+        <Home />
       </div>
     </CartContextProvider>
   )

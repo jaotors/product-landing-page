@@ -11,18 +11,6 @@ export const CartContext = createContext()
  * }
  */
 
-export const COLOR = {
-  black: 'black',
-  charcoal: 'charcoal',
-  midnight: 'midnight',
-  ash: 'ash',
-}
-
-export const SIZE = {
-  20: '20',
-  30: '30',
-}
-
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([])
 
