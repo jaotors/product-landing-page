@@ -2,6 +2,8 @@ import { useContext } from 'react'
 
 import { CartContext } from '../context/CartContext'
 
+import Section from '../components/Section'
+
 import PRICE from '../fixtures/PRICE'
 
 import BagDefault from '../assets/bag/default-bag-1.jpg'
@@ -21,7 +23,7 @@ const Home = () => {
   }
 
   return (
-    <section
+    <Section
       id='home'
       className='w-full h-screen flex flex-col items-center justify-center'
     >
@@ -43,7 +45,7 @@ const Home = () => {
       >
         Add to Cart
       </button>
-    </section>
+    </Section>
   )
 }
 
