@@ -1,6 +1,7 @@
 import CartContextProvider from './context/CartContext'
 import Navbar from './components/Navbar'
 import { Home, TheProduct, Gallery } from './pages'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Home />
         <TheProduct />
         <Gallery />
+        <Footer />
       </div>
     </CartContextProvider>
   )

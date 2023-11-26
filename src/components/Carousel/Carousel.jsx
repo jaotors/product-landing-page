@@ -23,7 +23,7 @@ const Carousel = ({ items = [] }) => {
 
   return (
     <div className='relative w-[60%] m-auto overflow-hidden'>
-      <div className='absolute w-full h-full flex justify-between items-center z-10'>
+      <div className='absolute w-full h-full flex justify-between items-center z-10 px-1'>
         <button
           className='border rounded-full border-gray-800 bg-white hover:text-white hover:bg-gray-800'
           onClick={handlePrevious}

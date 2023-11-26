@@ -29,7 +29,7 @@ const Home = () => {
       <div className='max-w-[360px] sm:w-full'>
         <img src={BagDefault} alt='Bag Default' />
       </div>
-      <h1 className='text-4xl font-black mb-1'>Everyday Bag!</h1>
+      <h1 className='text-4xl font-black mb-1 text-gray-800'>Everyday Bag!</h1>
       <p className='mb-2 text-lg max-w-[400px] text-center p-2'>
         An iconic, award-winning pack for everyday and photo carry, the newly
         revamped Everyday Backpack is built around access, organization,
