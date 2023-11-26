@@ -4,19 +4,18 @@ import { CartContext } from '../context/CartContext'
 
 import Section from '../components/Section'
 
-import PRICE from '../fixtures/PRICE'
+import PRICE from '../fixtures/PRICES'
 
-import BagDefault from '../assets/bag/default-bag-1.jpg'
+import BagDefault from '../assets/bags/default-bag-1.jpg'
 
 const Home = () => {
   const { addToCart } = useContext(CartContext)
 
   const handleAddToCart = () => {
     const cartItem = {
-      id: new Date().getTime().toString(),
       color: 'black',
-      size: 30,
-      price: PRICE[30],
+      size: 20,
+      price: PRICE[20],
     }
 
     addToCart(cartItem)

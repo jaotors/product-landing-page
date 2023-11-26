@@ -15,7 +15,11 @@ const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([])
 
   const addToCart = (item) => {
-    setCart((state) => [...state, item])
+    const cartItem = {
+      id: new Date().getTime().toString(),
+      ...item,
+    }
+    setCart((state) => [...state, cartItem])
   }
 
   const removeToCart = (id) => {

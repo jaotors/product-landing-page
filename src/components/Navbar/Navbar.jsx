@@ -45,7 +45,7 @@ const Navbar = () => {
                   leaveFrom='opacity-100 translate-y-0'
                   leaveTo='opacity-0 translate-y-1'
                 >
-                  <Popover.Panel className='absolute right-0 z-10 mt-1 w-screen max-w-sm sm:px-0 lg:max-w-3xl'>
+                  <Popover.Panel className='absolute right-0 z-10 mt-1 w-screen max-w-[320px] sm:px-0 lg:max-w-3xl'>
                     <div className='overflow-hidden bg-white rounded shadow ring-1 ring-black/5'>
                       <nav className='flex flex-col'>
                         <a

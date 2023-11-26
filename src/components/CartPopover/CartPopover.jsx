@@ -19,7 +19,7 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
           className={clsx(
             'relative py-2 px-4',
             primary
-              ? 'rounded-full border border-gray-800 hover:bg-gray-800 hover:text-white'
+              ? 'rounded-full border border-gray-800 bg-white hover:bg-gray-800 hover:text-white'
               : ''
           )}
         >
@@ -41,7 +41,7 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
         >
           <Popover.Panel
             className={clsx(
-              'absolute right-0 mb-1 z-10 w-screen max-w-sm sm:px-0 lg:max-w-3xl',
+              'absolute right-0 mb-1 z-10 w-screen max-w-[310px] sm:px-0 lg:max-w-3xl',
               direction === 'top' ? 'bottom-full' : ''
             )}
           >
@@ -55,7 +55,7 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
                   <CartList items={cart} />
                   <div className='flex items-center justify-between w-full p-4'>
                     <p className='text-md font-black'>Total: $00.00</p>
-                    <button className='border border-gray-800 rounded px-6 py-2'>
+                    <button className='border border-gray-800 rounded hover:bg-gray-800 hover:text-white px-6 py-2 uppercase'>
                       Checkout
                     </button>
                   </div>
