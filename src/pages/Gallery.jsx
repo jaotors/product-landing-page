@@ -7,7 +7,9 @@ const Gallery = () => {
       <h1 className='flex items-center justify-center text-3xl mt-10 mb-8 font-black text-gray-800'>
         Gallery
       </h1>
-      <Carousel items={SLIDES} />
+      <div className='max-w-3xl m-auto'>
+        <Carousel items={SLIDES} />
+      </div>
     </section>
   )
 }
