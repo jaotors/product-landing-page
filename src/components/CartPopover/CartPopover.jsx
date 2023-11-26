@@ -1,21 +1,33 @@
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { Popover, Transition } from '@headlessui/react'
-import { ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { ShoppingCartIcon } from '@heroicons/react/24/solid'
 
 import { CartContext } from '../../context/CartContext'
 import CartList from '../CartList/CartList'
 
 const CartPopover = ({ primary = false, direction = 'bottom' }) => {
-  const { cart } = useContext(CartContext)
+  const cartRef = useRef()
+  const { cart, clearAll } = useContext(CartContext)
 
   const cartWidgetNum =
     cart.length > 0 ? `${cart.length > 9 ? `9+` : cart.length}` : ''
+
+  const totalPrice = cart.reduce((acc, val) => {
+    return acc + val.price
+  }, 0)
+
+  useEffect(() => {
+    if (cartRef.current && cart.length > 0) {
+      cartRef.current.click()
+    }
+  }, [cartRef, cart])
 
   return (
     <Popover.Group>
       <Popover className='relative'>
         <Popover.Button
+          ref={cartRef}
           className={clsx(
             'relative py-2 px-4',
             primary
@@ -45,16 +57,26 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
               direction === 'top' ? 'bottom-full' : ''
             )}
           >
-            <div className='overflow-hidden bg-white rounded shadow ring-1 ring-black/5 max-h-[320px]'>
+            <div className='overflow-hidden bg-white rounded shadow ring-1 ring-black/5 max-h-[400px]'>
               {cart.length < 1 ? (
                 <p className='text-lg text-center font-medium p-2'>
                   No items yet!
                 </p>
               ) : (
                 <>
+                  <div className='flex justify-end p-2 text-[0.75rem] border-b border-b-gray-800'>
+                    <button
+                      className='border border-gray-800 rounded hover:bg-gray-800 hover:text-white p-2 capitalize'
+                      onClick={clearAll}
+                    >
+                      Clear all
+                    </button>
+                  </div>
                   <CartList items={cart} />
                   <div className='flex items-center justify-between w-full p-4'>
-                    <p className='text-md font-black'>Total: $00.00</p>
+                    <p className='text-md font-black'>
+                      Total: ${Math.round(totalPrice * 100) / 100}
+                    </p>
                     <button className='border border-gray-800 rounded hover:bg-gray-800 hover:text-white px-6 py-2 uppercase'>
                       Checkout
                     </button>

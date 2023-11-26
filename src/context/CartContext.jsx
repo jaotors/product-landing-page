@@ -2,15 +2,6 @@ import { useState, createContext } from 'react'
 
 export const CartContext = createContext()
 
-/**
- * cartItem: {
- *  id: new Date().getTime().toString(),
- *  color: black | charcoal | midnight | ash,
- *  size: 20 | 30
- *  price: number
- * }
- */
-
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([])
 
@@ -26,10 +17,15 @@ const CartContextProvider = ({ children }) => {
     setCart((state) => state.filter((item) => item.id !== id))
   }
 
+  const clearAll = () => {
+    setCart([])
+  }
+
   const contextValue = {
     cart,
     addToCart,
     removeToCart,
+    clearAll,
   }
 
   return (
