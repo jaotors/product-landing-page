@@ -2,6 +2,8 @@
 
 A product landing page using [PeakDesign](https://www.peakdesign.com/) product.
 
+You can view the deployed app here! [https://everyday-bag.vercel.app/](https://everyday-bag.vercel.app/)
+
 ## Versions
 ```
 - NodeJS 18.17.0
