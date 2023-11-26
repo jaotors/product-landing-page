@@ -65,9 +65,11 @@ const TheProduct = () => {
       </div>
       <div className='flex flex-col text-center gap-4 p-4'>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam velit
-          dolorem dicta inventore doloremque similique iure error modi sit, esse
-          nam ipsam quia cupiditate! Deserunt nam a atque vel? Officia!
+          Inside, 3 configurable FlexFold dividers keep gear organized,
+          protected, and not bunched at the bottom of your bag. Dedicated
+          sleeves for up to 15” laptop (or 16" MacBook Pro), tablet, or
+          documents, plus a variety of internal slip pockets for small items.
+          100% recycled 400D weatherproof shell keeps everything safe.
         </p>
         <h3 className='text-3xl mb-3'>
           Price: <strong>${PRICE[selectedSize]}</strong>
