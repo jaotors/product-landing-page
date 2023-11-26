@@ -17,6 +17,10 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
     return acc + val.price
   }, 0)
 
+  const handleCheckout = () => {
+    alert('This function will redirect to the Checkout page!')
+  }
+
   useEffect(() => {
     if (cartRef.current && cart.length > 0) {
       cartRef.current.click()
@@ -77,7 +81,10 @@ const CartPopover = ({ primary = false, direction = 'bottom' }) => {
                     <p className='text-md font-black'>
                       Total: ${Math.round(totalPrice * 100) / 100}
                     </p>
-                    <button className='border border-gray-800 rounded hover:bg-gray-800 hover:text-white px-6 py-2 uppercase'>
+                    <button
+                      className='border border-gray-800 rounded hover:bg-gray-800 hover:text-white px-6 py-2 uppercase'
+                      onClick={handleCheckout}
+                    >
                       Checkout
                     </button>
                   </div>
