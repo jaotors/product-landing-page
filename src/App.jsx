@@ -1,6 +1,6 @@
 import CartContextProvider from './context/CartContext'
 import Navbar from './components/Navbar'
-import { Home, TheProduct } from './pages'
+import { Home, TheProduct, Gallery } from './pages'
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Navbar />
         <Home />
         <TheProduct />
+        <Gallery />
       </div>
     </CartContextProvider>
   )
